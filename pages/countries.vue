@@ -27,11 +27,12 @@
 </template>
 
 <script setup lang="ts">
-import {useNuxtApp} from "#app";
 import { storeToRefs } from "pinia";
-const nuxtApp = useNuxtApp();
+import { useExampleStore } from "@/stores/exampleStore";
 
-const exampleStore = nuxtApp.exampleStore;
+
+
+const exampleStore = useExampleStore();
 const { code, data, fetching} = storeToRefs(exampleStore);
 
 
